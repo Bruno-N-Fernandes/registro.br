@@ -177,8 +177,8 @@ registrobr            # ou: registrobr shell
 No shell, aplique um arquivo de zona (estilo BIND), uma entrada por linha:
 
 ```
-(registro.br) use tantagrana.com.br      # define o domínio atual (opcional)
-(registro.br) add registros.txt          # ou: add tantagrana.com.br registros.txt
+(registro.br) use meudominio.com.br      # define o domínio atual (opcional)
+(registro.br) add registros.txt          # ou: add meudominio.com.br registros.txt
 (registro.br) update registros.txt       # 'update' é sinônimo de 'add'
 ```
 
