@@ -184,7 +184,7 @@
     const parsed = blocks.map((b) => ({ key: b.key, recs: recordsOf(b.body) }));
 
     // 3) Subdomínio de e-mail = nome do registro domain/spf relativo ao domínio.
-    //    Ex.: "hmail.tamarkado.com.br" com domínio "tamarkado.com.br" => "hmail".
+    //    Ex.: "hmail.meudominio.com.br" com domínio "meudominio.com.br" => "hmail".
     let emailSub = "";
     for (const b of parsed) {
       if ((b.key === "domain" || b.key === "spf") && b.recs.length) {

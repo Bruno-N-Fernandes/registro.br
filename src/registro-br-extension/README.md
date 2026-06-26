@@ -88,7 +88,7 @@ preenche a tabela.
 - O parser lê os pares `"chave" = valor` diretamente, então funciona mesmo se as
   chaves `{ }` se perderem no copiar/colar.
 - O `name` é tornado **relativo ao domínio** do campo de cima: por exemplo, com o
-  domínio `tamarkado.com.br`, o name `hmail.tamarkado.com.br` (blocos `domain`/
+  domínio `meudominio.com.br`, o name `hmail.meudominio.com.br` (blocos `domain`/
   `spf`) vira `hmail`.
 - Os registros **DKIM** (`dkim`/`dkim2`) vêm relativos ao subdomínio de e-mail,
   então recebem esse subdomínio como **sufixo**: `selector1..._domainkey` vira
@@ -110,7 +110,7 @@ acs_custom_domain_dns_records = tolist([
     "dmarc" = tolist([])
     "spf" = tolist([
       {
-        "name" = "email.tamarkado.com.br"
+        "name" = "email.meudominio.com.br"
         "ttl"  = 3600
         "type" = "TXT"
         "value" = "v=spf1 include:spf.protection.outlook.com -all"
