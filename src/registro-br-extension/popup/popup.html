@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="popup.css" />
+  <title>Registro.br DNS Helper</title>
+</head>
+<body>
+  <header>
+    <div class="logo">.br</div>
+    <div>
+      <h1>DNS Helper</h1>
+      <div id="status" class="status muted">Verificando aba…</div>
+    </div>
+  </header>
+
+  <div id="banner" class="banner hidden"></div>
+
+  <main>
+    <section class="domain-bar">
+      <label class="lbl" for="domainInput">Domínio</label>
+      <div class="domain-row">
+        <input id="domainInput" type="text" spellcheck="false" placeholder="ex: tantagrana.com.br" />
+        <button id="btnOpenDns" class="ghost" type="button" title="Abrir a página de DNS e entrar no editor de zona">Abrir DNS</button>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <span>Registros a criar</span>
+        <span class="imports">
+          <button id="btnImport" class="link" type="button">texto ▾</button>
+          <button id="btnImportTf" class="link" type="button">Terraform ▾</button>
+        </span>
+      </div>
+
+      <div id="importBox" class="import hidden">
+        <textarea id="importText" rows="4" spellcheck="false"
+          placeholder="Um por linha:  nome tipo valor [ttl] [prioridade]&#10;www CNAME meusite.com.br&#10;@ A 203.0.113.10&#10;api A 203.0.113.20 3600&#10;mail MX mx.provedor.com 3600 10"></textarea>
+        <button id="btnParse" class="ghost" type="button">Carregar linhas</button>
+      </div>
+
+      <div id="importTfBox" class="import hidden">
+        <textarea id="importTfText" rows="6" spellcheck="false"
+          placeholder="Cole a saída do Terraform aqui (acs_custom_domain_dns_records = tolist([ ... ]))"></textarea>
+        <div class="tf-actions">
+          <button id="btnParseTf" class="ghost half" type="button" title="Limpa a lista e usa só os do Terraform">Substituir pelos do Terraform</button>
+          <button id="btnAddTf" class="ghost half" type="button" title="Mantém os registros atuais e acrescenta os do Terraform">+ Adicionar do Terraform</button>
+        </div>
+      </div>
+
+      <div class="rows-head">
+        <span class="c-type">Tipo</span>
+        <span class="c-name">Nome / subdomínio</span>
+        <span class="c-value">Valor</span>
+        <span class="c-pri">Prio.</span>
+        <span class="c-del"></span>
+      </div>
+      <div id="rows"></div>
+      <div class="row-actions">
+        <button id="btnAddRow" class="ghost" type="button">+ Adicionar linha</button>
+        <button id="btnClearRows" class="ghost" type="button" title="Remove todos os registros desta lista (não afeta o que já foi salvo)">Remover todos</button>
+      </div>
+    </section>
+
+    <div class="actions">
+      <button id="btnApply" class="primary" type="button">Aplicar no registro.br</button>
+    </div>
+    <div class="actions">
+      <button id="btnSave" class="ghost half" type="button" title="Clicar em Salvar no painel">Salvar alterações</button>
+      <button id="btnDiagnose" class="ghost half" type="button" title="Inspecionar a página atual">Diagnosticar</button>
+    </div>
+    <label class="autosave">
+      <input type="checkbox" id="chkAutoSave" /> Salvar automaticamente após aplicar
+    </label>
+    <label class="autosave" title="Abre o painel numa janela própria, colada na borda direita, que não fecha ao clicar no navegador">
+      <input type="checkbox" id="chkOnTop" /> Manter janela aberta (destacar à direita)
+    </label>
+
+    <section id="logSection" class="hidden">
+      <div class="section-head"><span>Andamento</span><button id="btnClearLog" class="link" type="button">limpar</button></div>
+      <pre id="log" class="log"></pre>
+    </section>
+  </main>
+
+  <footer>
+    <span>Use na <b>Edição de Zona → Modo Avançado</b> do seu domínio.</span>
+  </footer>
+
+  <script src="popup.js"></script>
+</body>
+</html>

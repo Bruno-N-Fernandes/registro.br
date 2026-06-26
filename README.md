@@ -9,6 +9,28 @@ zona de DNS.
 > pelo registro.br. Para automação suportada/oficial, o caminho é o protocolo
 > EPP (apenas provedores credenciados).
 
+## Extensão do Chrome (alternativa pelo navegador)
+
+Além do app console, o repositório inclui uma **extensão do Chrome (Manifest V3)**
+em [`src/registro-br-extension/`](src/registro-br-extension/) que cria e configura
+**registros DNS e subdomínios** direto no painel do registro.br, usando a **sua
+sessão já logada** — não pede nem guarda senha (não usa a API interna; automatiza
+a própria tela).
+
+Em resumo:
+
+- **Abrir DNS** leva o domínio direto ao editor de zona (Configurar zona → Editar
+  zona → Modo Avançado).
+- Adiciona **vários registros de uma vez**; importa por **texto** (estilo BIND) ou
+  da saída **Terraform** (`acs_custom_domain_dns_records`).
+- **Salvar** manual ou automático após aplicar; janela **destacável** à direita; e
+  botão **Diagnosticar** para readaptar caso o painel mude de layout.
+- Tipos: A, AAAA, CNAME, MX, TXT, NS, SRV. Instalação: `chrome://extensions` →
+  Modo do desenvolvedor → **Carregar sem compactação**.
+
+📄 Detalhes completos em
+[`src/registro-br-extension/README.md`](src/registro-br-extension/README.md).
+
 ## Mapeamento Python → C#
 
 | Python | C# | Papel |
