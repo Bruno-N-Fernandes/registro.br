@@ -1,0 +1,22 @@
+# Altera o seed: inclusões, alterações, duplicações e exclusões.
+# (rode depois do seed.txt)
+
+# === INCLUSÕES (nomes novos) ===
+a3    A      203.0.113.13
+cn3   CNAME  alvo3.exemplo.net
+
+# === ALTERAÇÕES (troca o valor do registro existente) ===
+a1    A      203.0.113.99
+cn1   CNAME  novo-alvo.exemplo.net
+
+# === A "DUPLICADO" (a2 mantém o valor antigo e ganha um segundo) ===
+a2    A      203.0.113.12
+a2    A      203.0.113.21
+
+# === TXT "DUPLICADO" (txt1 mantém o valor antigo e ganha um segundo) ===
+txt1  TXT    "valor-1"
+txt1  TXT    "valor-1-extra"
+
+# === EXCLUSÕES ===
+- mx2   MX
+- cn2   CNAME

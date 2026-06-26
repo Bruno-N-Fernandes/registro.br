@@ -1,0 +1,4 @@
+# Remove apenas UM dos TXT duplicados de txt1 (deixa só "valor-1").
+# (rode depois do update.txt)
+
+- txt1  TXT  "valor-1-extra"

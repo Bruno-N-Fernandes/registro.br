@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net10.0</TargetFramework>
+		<ImplicitUsings>disable</ImplicitUsings>
+		<Nullable>disable</Nullable>
+		<RootNamespace>RegistroBrConsole</RootNamespace>
+		<AssemblyName>registrobr</AssemblyName>
+		<InvariantGlobalization>true</InvariantGlobalization>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Otp.NET" Version="1.4.1" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Update="local.settings.json" CopyToOutputDirectory="PreserveNewest" Condition="Exists('local.settings.json')" />
+	</ItemGroup>
+
+</Project>

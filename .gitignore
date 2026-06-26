@@ -1,0 +1,14 @@
+## .NET — saída de build
+bin/
+obj/
+[Dd]ebug/
+[Rr]eleases/
+
+## IDEs / editores
+.vs/
+.idea/
+*.user
+*.suo
+
+## Segredos locais (senha e seed do OTP) — NÃO versionar
+local.settings.json

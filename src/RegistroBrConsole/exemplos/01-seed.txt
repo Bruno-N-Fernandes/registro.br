@@ -1,0 +1,18 @@
+# Seed inicial — 2 nomes para cada tipo de registro.
+# Formato: nome tipo rdata [ttl]   (@ = raiz; # ou ; = comentário)
+
+# --- A ---
+a1    A      203.0.113.11
+a2    A      203.0.113.12
+
+# --- CNAME ---
+cn1   CNAME  alvo1.exemplo.net
+cn2   CNAME  alvo2.exemplo.net
+
+# --- MX ---
+mx1   MX     10 mail1.exemplo.net
+mx2   MX     20 mail2.exemplo.net
+
+# --- TXT ---
+txt1  TXT    "valor-1"
+txt2  TXT    "valor-2"
