@@ -12,3 +12,6 @@ obj/
 
 ## Segredos locais (senha e seed do OTP) — NÃO versionar
 local.settings.json
+
+## Saída de build do Visual Studio (Website precompile)
+PrecompiledWeb/
